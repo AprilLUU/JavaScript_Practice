@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text">
+  <!-- <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js"></script>
+  <script src="./06_debounce-V6-函数返回值（Promise）.js"></script> -->
+  <script src="./05_debounce-V5-函数返回值（回调函数）.js"></script>
+  <script>
+    const inputEl = document.querySelector('input')
+    let counter = 0
+
+    function inputChange(event) {
+      console.log(this, event)
+      console.log(`发送了${++counter}次网络请求`)
+      // throw new Error('error')
+      return 'success'
+    }
+
+    const success = res => console.log(res)
+    const failure = err => console.log(err)
+
+    const debounceInputChage = debounce(inputChange, 500, {
+      immediate: true,
+      success: success,
+      failure: failure
+    })
+
+    const tempCallback = function(event) {
+      debounceInputChage.call(this, event).then(res => {
+        console.log(res)
+      }).catch(err => {
+        console.log(err)
+      })
+    }
+
+    inputEl.oninput = debounceInputChage
+
+    // inputEl.oninput = _.debounce(inputChange, 200)
+    // inputEl.oninput = _.throttle(inputChange, 200)
+  </script>
+</body>
+</html>

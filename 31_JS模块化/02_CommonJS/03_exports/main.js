@@ -1,0 +1,1 @@
+const { name, age, sum } = require('./test.js')

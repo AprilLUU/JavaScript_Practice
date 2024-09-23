@@ -1,0 +1,1 @@
+document.cookie = 'name=why;max-age=0'

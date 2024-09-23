@@ -1,0 +1,3 @@
+document.title
+document.body
+document.documentElement

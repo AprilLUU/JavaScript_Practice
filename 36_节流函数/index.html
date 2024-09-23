@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text">
+  <script src="./06_throttle-V6-返回值(promise).js"></script>
+  <script>
+    const inputEl = document.querySelector('input')
+    let counter = 0
+    function inputChange() {
+      console.log('执行了' + (++counter) + '次函数')
+    }
+    const throttleInputChange = throttle(inputChange, 1000, { leading: true, trailing: true })
+    inputEl.oninput = throttleInputChange
+  </script>
+</body>
+</html>
