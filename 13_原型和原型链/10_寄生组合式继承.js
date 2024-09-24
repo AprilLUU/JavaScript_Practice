@@ -33,7 +33,7 @@ Object.defineProperty(Person.prototype, 'constructor', {
 })
 
 function Student(name, age, sno) {
-  Person.call(name, age)
+  Person.call(this, name, age)
   this.sno = sno
 }
 
