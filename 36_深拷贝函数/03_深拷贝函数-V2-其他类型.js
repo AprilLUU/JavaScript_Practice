@@ -31,7 +31,7 @@ function deepClone(originVaue) {
 
   const sKeys = Object.getOwnPropertySymbols(originVaue)
   for (const sKey of sKeys) {
-    newObj[skey] = deepClone(originVaue[skey])
+    newObj[sKey] = deepClone(originVaue[sKey])
   }
 
   return newObj
