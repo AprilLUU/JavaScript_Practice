@@ -36,7 +36,7 @@ function deepClone(originValue, map = new WeakMap()) {
 
   const sKeys = Object.getOwnPropertySymbols(originValue)
   for (const sKey of sKeys) {
-    newObj[skey] = deepClone(originValue[skey], map)
+    newObj[sKey] = deepClone(originValue[sKey], map)
   }
 
   return newObj
