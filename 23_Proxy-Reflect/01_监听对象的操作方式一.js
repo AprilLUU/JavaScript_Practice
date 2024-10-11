@@ -1,10 +1,10 @@
 const obj = {
-  name: 'why',
+  name: "why",
   age: 18
 }
 
 // Object.defineProperty(obj, 'name', {
-//   enumerable: true, 
+//   enumerable: true,
 //   configurable: true,
 //   get() {
 
@@ -14,14 +14,15 @@ const obj = {
 //   }
 // })
 
-Object.keys(obj).forEach(key => {
+Object.keys(obj).forEach((key) => {
   let _value = obj[key]
   Object.defineProperty(obj, key, {
     get() {
-      return _value
-    },  
+      return _value;
+    },
     set(newValue) {
-      _value = newValue
+      // 闭包 修改_value getter返回_value实现赋值
+      _value = newValue;
     }
   })
 })
