@@ -52,6 +52,7 @@ class MyPromise {
         })
       }
     }
+    
     try {
       executor(resolve, reject)
     } catch(err) {
@@ -189,6 +190,7 @@ class MyPromise {
     })
   }
 }
+
 new MyPromise((resolve, reject) => {
   console.log(this, this.value)
   resolve("success")

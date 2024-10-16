@@ -52,6 +52,7 @@ class MyPromise {
         })
       }
     }
+    
     try {
       executor(resolve, reject)
     } catch(err) {
