@@ -7,7 +7,6 @@ interface IEventBus {
   [key: string]: IHandler[]
 }
 
-
 export class EventBus {
   eventBus: IEventBus
 
@@ -39,7 +38,7 @@ export class EventBus {
     if (!handlers) {
       throw new Error(`${eventName} is not register`)
     }
-    handlers.forEach(handler => {
+    handlers.forEach((handler) => {
       handler.eventHandler.apply(handler.context, payload)
     })
     return this

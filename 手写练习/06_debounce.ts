@@ -1,5 +1,5 @@
 function debounce(fn: any, delay: number, immediate: boolean = false) {
-  let timer = null
+  let timer: any = null
   let isInvoke = false
   
   const execFunWithErr = function(fn: any, thisArg: any, resolve: any, reject: any, ...args: any[]) {

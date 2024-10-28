@@ -1,6 +1,6 @@
 
 function throttle(fn: any, interval: number, options = { leading: true, trailing: false }) {
-  let timer = null
+  let timer: any = null
   let lastTime = 0
   const { leading, trailing } = options
 
