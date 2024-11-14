@@ -16,7 +16,8 @@ function throttle(fn, interval, optinons = { leading: true, trailing: false }) {
    */
   const _throttle = function(...args) {
     const nowTime = new Date().getTime()
-    //第一次是否触发函数 lastTime = 0时即为第一次触发事件
+    // 第一次是否触发函数 lastTime = 0时即为第一次触发事件
+    // leading为false 即非立即调用 此时时间赋值为当前时间
     if (!lastTime && !leading) {    
       lastTime = nowTime
       // console.log('leading为fasle时lastTime为0时：' + lastTime)
@@ -25,6 +26,7 @@ function throttle(fn, interval, optinons = { leading: true, trailing: false }) {
     const remainTime = interval - (nowTime - lastTime)
     // console.log('剩余时间' + remainTime)
     if (remainTime <= 0) {
+      // 正常调用 清除上一次冷却时间的定时器
       if (timer) {
         clearTimeout(timer)
         timer = null
